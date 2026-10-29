@@ -1,5 +1,6 @@
 package org.example;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.example.dao.UserDao;
 import org.example.domain.user;
@@ -30,8 +31,8 @@ class MybatisplusExampleApplicationTests {
 
     @Test
     void testselect1() {
-        QueryWrapper<user> qw = new QueryWrapper<>();
-        qw.lambda().lt(user::getAge, 20).gt(user::getAge, 10);
+        LambdaQueryWrapper<user> qw = new LambdaQueryWrapper<user>();
+        qw.lt(user::getAge, 20).gt(user::getAge, 10); // Changed from qw.lambda().lt(user::getAge, 20).gt(user::getAge, 10);
         List<user> users = userDao.selectList(qw);
         System.out.println(users);
     }
