@@ -24,6 +24,12 @@ class MybatisplusExampleApplicationTests {
     }
 
     @Test
+    void testSelectById() {
+        user user = userDao.selectById(1L);
+        System.out.println(user);
+    }
+
+    @Test
     void testGetAll() {
         List<user> users = userDao.selectList(null);
         System.out.println(users);
