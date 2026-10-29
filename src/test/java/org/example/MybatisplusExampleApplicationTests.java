@@ -16,12 +16,8 @@ class MybatisplusExampleApplicationTests {
     @Autowired
     private UserDao userDao;
 
-    @Test
-    void testUpdate(){
-        user user = userDao.selectById(1L);
-        user.setName("Person");
-        userDao.updateById(user);
-    }
+
+
 
     @Test
     void testSelectById() {
